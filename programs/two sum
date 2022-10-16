@@ -1,0 +1,34 @@
+link:-https://leetcode.com/problems/two-sum/
+Cpp
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        
+        int l=nums.size();
+        unordered_map<int,int> m;
+        
+        vector<int> v;
+        for(int i=0;i<l;i++)
+        {
+         m[target-nums[i]]=i;
+        }
+        
+        for(int i=0;i<l;i++)
+        {
+            if(m[nums[i]]>0)
+            {
+//             similarity check
+                {
+                    if(i==m[nums[i]])
+                        continue;
+                }
+                vector<int>p={i,m[nums[i]]};
+                // v={i,m[nums[i]]};
+                return p;
+            }
+         
+        }
+        return v;
+    }
+};
